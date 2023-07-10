@@ -30,3 +30,14 @@ List<ProductReview> productReviews = new List<ProductReview>()
     new ProductReview(){ ProductID = 24, UserID = 10, Rating = 5, Review = "Best", isLike = true },
     new ProductReview(){ ProductID = 25, UserID = 11, Rating = 1, Review = "Worst", isLike = false }
 };
+
+foreach (var list in productReviews)
+{
+    Console.WriteLine("Product ID: {0} User ID: {1} Rating: {2} Review: {3} IS Like: {4}", 
+        list.ProductID.ToString().PadRight(3), 
+        list.UserID.ToString().PadRight(3), 
+        list.Rating.ToString().PadRight(3), 
+        list.Review.ToString().PadRight(6), 
+        list.isLike);
+}
+
