@@ -25,5 +25,24 @@ namespace Product_Review_Management_Problem
 
         }
 
+        public void SelectedRecords(List<ProductReview> listProductReview)
+        {
+            var recordedData = from productReviews in listProductReview
+                               where (productReviews.ProductID == 1 && productReviews.Rating > 3) ||
+                               (productReviews.ProductID == 4 && productReviews.Rating > 3) || 
+                               (productReviews.ProductID == 9 && productReviews.Rating > 3) 
+                               select productReviews;
+
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("Product ID: {0} User ID: {1} Rating: {2} Review: {3} IS Like: {4}",
+                    list.ProductID.ToString().PadRight(3),
+                    list.UserID.ToString().PadRight(3),
+                    list.Rating.ToString().PadRight(3),
+                    list.Review.ToString().PadRight(6),
+                    list.isLike);
+            }
+        }
+
     }
 }

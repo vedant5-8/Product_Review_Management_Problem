@@ -7,7 +7,7 @@ List<ProductReview> productReviews = new List<ProductReview>()
     new ProductReview(){ ProductID = 1, UserID = 1, Rating = 3, Review = "Good", isLike = true },
     new ProductReview(){ ProductID = 2, UserID = 1, Rating = 2, Review = "Bad", isLike = false },
     new ProductReview(){ ProductID = 3, UserID = 1, Rating = 4.9, Review = "Best", isLike = true },
-    new ProductReview(){ ProductID = 4, UserID = 2, Rating = 1, Review = "Worst", isLike = false },
+    new ProductReview(){ ProductID = 4, UserID = 2, Rating = 4.7, Review = "Best", isLike = false },
     new ProductReview(){ ProductID = 5, UserID = 2, Rating = 4, Review = "Better", isLike = true },
     new ProductReview(){ ProductID = 6, UserID = 3, Rating = 2, Review = "Bad", isLike = false },
     new ProductReview(){ ProductID = 7, UserID = 3, Rating = 3, Review = "Good", isLike = false },
@@ -38,6 +38,7 @@ while (true)
     Console.WriteLine("Select an option: ");
     Console.WriteLine("1. Display all reviews.");
     Console.WriteLine("2. Display top three records.");
+    Console.WriteLine("3. Dispay records who's rating is greater than 3 and product Id is 1 or 4 or 9.");
     Console.WriteLine("0. Exit");
     Console.WriteLine("==> ");
     int option = Convert.ToInt32(Console.ReadLine());
@@ -57,6 +58,9 @@ while (true)
             break;
         case 2:
             management.TopRecords(productReviews);
+            break;
+        case 3:
+            management.SelectedRecords(productReviews);
             break;
         case 0:
             Environment.Exit(0);
