@@ -44,5 +44,20 @@ namespace Product_Review_Management_Problem
             }
         }
 
+        public void CountOfRecords(List<ProductReview> listProductReview)
+        {
+            //var countData = listProductReview.GroupBy(x => x.ProductID).Select(x => new { ProductID = x.Key, Count = x.Count() });
+            
+            var countData = from review in listProductReview
+                            group review by review.ProductID into ProductGroup
+                            select new { ProductID = ProductGroup.Key, Count = ProductGroup.Count() };
+
+            foreach (var list in countData)
+            {
+                Console.WriteLine(list.ProductID + "==> " + list.Count);
+            }
+
+        }
+
     }
 }
